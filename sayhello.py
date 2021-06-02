@@ -15,8 +15,18 @@ class SayHello(App):
         self.window.add_widget(Image(source="logo.png"))
         #label widget
         self.greeting = Label(text="What's your name?")
-
+        self.window.add_widget(self.greeting)
+        #text imput
+        self.user = TextInput(multiline=False)
+        #button widget
+        self.button = Button(text="GREET")
+        self.button.bind(on_press=self.callback)
+        self.window.add_widget(self.button)
         return self.window
+
+    def callback(self, instance):
+        self.greeting.text = "Hello" + self.user.text + "!"
+
 
 if __name__ == "__main__":
     SayHello().run()
