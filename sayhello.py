@@ -18,6 +18,7 @@ class SayHello(App):
         self.window.add_widget(self.greeting)
         #text imput
         self.user = TextInput(multiline=False)
+        self.window.add_widget(self.user)
         #button widget
         self.button = Button(text="GREET")
         self.button.bind(on_press=self.callback)
